@@ -18,15 +18,37 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="shortcut icon" href="@Href("~/img/favicon.ico")">
 	<script type="text/javascript" src="@Href("~/scripts/modernizr-2.0.6.min.js")"></script>
+	<script type="text/javascript" src="http://use.typekit.com/llm7jrh.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/style.css")" />
+	<link rel="stylesheet" type="text/css" href="@Href("~/css/960_16_col.css")" />
 	@if (IsSectionDefined("styles"))
 	{
 		@RenderSection("styles")
 	}
 </head>
 <body>
+	<div class="header blu-grad" style="height:200px;">
+		<div class="container_16">
+			<div class="grid_5">
+				<a href=".././getpathway"><span class="logo">Pathway</span></a>
+			</div>
+			<div class="grid_11">
+				<ul class="nav pills right">
+					<li class="active"><a href="#">Features</a></li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#">Sign Up</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<div>
 		@RenderBody()
+	</div>
+	<div class="container_16">
+		
 	</div>
 
 	@if (IsSectionDefined("templates"))
