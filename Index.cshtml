@@ -1,7 +1,27 @@
 ﻿@{  
     Layout = "~/_Master.cshtml";
-    Page.Title = "Welcome to my Web Site!";
+    Page.Title = "Home";
 }
-<p>
-    ASP.NET Web Pages make it easy to build powerful .NET based applications for the web.
-</p>
+
+<div class="featured container_16">
+	<div class="grid_8 prefix_1 alpha">
+		<img src="@Href("~/img/featured-screenshot.png")" width="440" height="290" style="margin-top:55px;border:2px solid rgba(255,255,255,0.5);" />
+	</div>
+	<div class="grid_6">
+		<h1>Short sentence headline about the Pathway App.</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tristique nunc eget eros bibendum ornare. Duis non ultricies ante. Praesent odio nisl, dignissim at tristique non, semper et ipsum. Aenean lorem libero, fermentum iaculis dapibus et, sollicitudin nec sem.</p>
+		<div style="margin-top:20px;">
+			<a href="/getpathway/signup" class="btn large">Sign Up</a>&nbsp;&nbsp;
+			<a href="/getpathway/plans" class="btn large">Plans &amp; Pricing</a>
+		</div>
+	</div>
+</div>
+<div class="gry-shadow main container_16" style="height:600px;">
+</div>
+
+@section styles
+{
+	<style type="text/css">
+		 .header {height:620px;}
+	</style>
+}
