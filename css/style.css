@@ -42,8 +42,8 @@ body, button, input, select, textarea {font-family:proxima-nova, Helvetica, Aria
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #8BCD28; color: #fff; text-shadow: none; }
+::selection { background: #8BCD28; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
@@ -136,7 +136,7 @@ form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
 
 /* Indicate that 'label' will shift focus to the associated form element */
-label { cursor: pointer; }
+label { cursor: pointer;display:block; }
 
 /* 
  * 1. Correct color not inheriting in IE6/7/8/9 
@@ -218,7 +218,7 @@ td { vertical-align: top; }
 
 
 /* Modernized Styles */
-.boxshadow .gry-shadow {box-shadow:0 0 5px rgba(0,0,0,0.5);-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5);-moz-box-shadow:0 0 5px rgba(0,0,0,0.5);}
+.boxshadow .gry-shadow, .ui-dialog {box-shadow:0 0 5px rgba(0,0,0,0.5);-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5);-moz-box-shadow:0 0 5px rgba(0,0,0,0.5);}
 .cssgradients .blu-grad {background:#389ECB;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#389ECB', endColorstr='#056A96');background: -webkit-gradient(linear, left top, left bottom, from(#389ECB), to(#056A96));background:-moz-linear-gradient(top, #389ECB, #056A96)}
 .cssgradients .blk-grad {background:#454545;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#333');background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));background:-moz-linear-gradient(top, #666, #333)}
 
@@ -236,9 +236,14 @@ body {background:#454545;}
 .nav.pills {margin-top:30px;}
 
 /* Footer */
-
 .footer {border-top:1px solid #333;}
 .footer-content {padding:15px 0;color:#ccc;font-size:12px;}
+
+/* Contact Form */
+#frmContact {margin:0 -.2em;border-top:1px solid #fff;text-shadow:0 1px rgba(255, 255, 255, 0.6);}
+#frmContact label {margin:0 0 10px 0;}
+#frmContact label input[type="text"] {width:100%;}
+#frmContact textarea {height:230px;resize:none;}
 
 /* Design Elements */
 .pills {margin: 0 0 18px;padding: 0;list-style: none;zoom: 1;}
@@ -279,10 +284,14 @@ a.top:hover {opacity:1;}
 /* Icons */
 .icon-clock {background:url("../img/icon-clock.png") top left no-repeat transparent;width:48px;height:48px;display:inline-block;text-indent:-9999px;top: -20px;position: relative;margin: 0 5px -20px 0;}
 
-
-
-
-
+/* Jquery UI Customizations */
+.ui-dialog {overflow: visible;background:#f0f0f0;}
+.ui-dialog .ui-dialog-titlebar-close {right:-9px;top:0;background:#fff;border:2px solid rgba(0,0,0,0.75);border-radius:25px;-webkit-border-radius:25px;-moz-border-radius:25px;}
+.ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {opacity:.75;}
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {padding:1px;border-color:rgba(0,0,0,1);}
+.ui-dialog .ui-dialog-titlebar-close:hover .ui-icon-closethick, .ui-dialog .ui-dialog-titlebar-close:focus .ui-icon-closethick {opacity:1.0;}
+.ui-dialog .ui-dialog-titlebar {margin:-.2em -.2em 0 -.2em;background:#fff;border:none 0;border-bottom:3px solid rgba(0, 0, 0, 0.2);text-align:center;border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;}
+.ui-dialog .ui-dialog-title {float:none;margin:0;font-size:24px;font-weight:300;color:#389ECB;}
 
 
 

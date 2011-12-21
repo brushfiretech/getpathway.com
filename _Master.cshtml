@@ -17,11 +17,17 @@
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="shortcut icon" href="@Href("~/img/favicon.ico")">
+	<link rel="stylesheet" type="text/css" href="@Href("~/css/formalize/formalize.css")" />
 	<script type="text/javascript" src="@Href("~/scripts/modernizr-2.0.6.min.js")"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="@Href("~/scripts/jquery-ui-1.8.16.custom.min.js")"></script>
+	<script type="text/javascript" src="@Href("~/scripts/jquery.formalize.min.js")"></script>
 	<script type="text/javascript" src="http://use.typekit.com/llm7jrh.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" type="text/css" href="@Href("~/css/jquery-ui/jquery-ui-1.8.16.custom.css")" />
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/style.css")" />
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/960_16_col.css")" />
+
 	@if (IsSectionDefined("styles"))
 	{
 		@RenderSection("styles")
@@ -31,14 +37,14 @@
 	<div class="header blu-grad">
 		<div class="container_16">
 			<div class="grid_5">
-				<a href="../"><span class="logo">Pathway</span></a>
+				<a href="@Href("~/")"><span class="logo">Pathway</span></a>
 			</div>
 			<div class="grid_11">
 				<ul class="nav pills right">
-					<li class="active"><a href="features">Features</a></li>
-					<li><a href="plans">Plans</a></li>
-					<li><a href="signup">Sign Up</a></li>
-					<li><a href="#">Contact</a></li>
+					<li class="active"><a href="@Href("~/features")">Features</a></li>
+					<li><a href="@Href("~/plans")">Plans</a></li>
+					<li><a href="#">Sign Up</a></li>
+					<li><a id="btnContact" href="#">Contact</a></li>
 					<li><a href="https://pathwayapp.com/accounts/login">Login</a></li>
 				</ul>
 			</div>
@@ -69,14 +75,47 @@
 			</div>
 		</div>
 	</div>
+	<div id="frmContact" style="display:none;">
+		<div class="right" style="width:46%;">
+			<p>Drop us a line!<br /><br />If you have any questions or comments about Pathway, we'd love to hear from you.<br /><br />You can always <a href="#" style="font-weight:600;">Sign Up</a> to get to know Pathway a little better.</p>
+		</div>
+		<div class="left" style="width:49%;">
+			<label>Name:<br /><input type="text" /></label>
+			<label>Organization:<br /><input type="text" /></label>
+			<label>Email:<br /><input type="text" /></label>
+			<label>Phone:<br /><input type="text" /></label>
+		</div>
+		<div class="clearfix"></div>
+		<label>Comments / Questions:<br /><textarea></textarea></label>
+		<div class="rgt-align">
+			<a class="btn" id="frmContactSubmit" href="#">Send</a>
+		</div>
+	</div>
 
 	@if (IsSectionDefined("templates"))
 	{
 		@RenderSection("templates")
 	}
-	<!--
-		our script references go here
-	-->
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#btnContact").click(function()
+			{
+				console.log(1);
+				$("#frmContact").dialog(
+				{
+					width: 450,
+					height: 535,
+					title: "Contact Us",
+					draggable:false,
+					modal: true,
+					resizable: false,
+					close: function(event, ui) {$(this).dialog("destroy");}
+				});
+				return false;
+			});
+		});
+	</script>
 	@if (IsSectionDefined("scripts"))
 	{ 
 		@RenderSection("scripts")
