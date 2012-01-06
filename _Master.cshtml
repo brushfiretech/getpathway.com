@@ -24,6 +24,8 @@
 	<script type="text/javascript" src="@Href("~/scripts/jquery.formalize.min.js")"></script>
 	<script type="text/javascript" src="http://use.typekit.com/llm7jrh.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript" src="@Href("~/scripts/bootstrap-twipsy.js")"></script>
+	<script type="text/javascript" src="@Href("~/scripts/bootstrap-popover.js")"></script>	
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/jquery-ui/jquery-ui-1.8.16.custom.css")" />
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/style.css")" />
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/960_16_col.css")" />
@@ -53,7 +55,7 @@
 	<div class="primary">
 		@RenderBody()
 	</div>
-	<div class="footer blk-grad">
+	<div class="footer">
 		<div class="footer-content container_16">
 			<div class="grid_8" style="padding-top:6px;">
 				<p>
@@ -99,6 +101,11 @@
 	<script type="text/javascript">
 		$(function()
 		{
+			$(".toggle-btn").click(function()
+			{
+				$(this).parent("div").find(".toggle-content").toggle("slow");
+			});
+		
 			$("#btnContact").click(function()
 			{
 				console.log(1);
