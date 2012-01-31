@@ -34,6 +34,19 @@
 	{
 		@RenderSection("styles")
 	}
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-28820709-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>	
 </head>
 <body>
 	<div class="header blu-grad">
@@ -43,9 +56,9 @@
 			</div>
 			<div class="grid_11">
 				<ul class="nav pills right">
-					<li><a href="@Href("~/")">Home</a></li>
-					<li class="active"><a href="@Href("~/features")">Features</a></li>
-					<li><a href="@Href("~/plans")">Plans</a></li>
+					<li class="@(Page.Current.ToLower() == "home" ? "active" : "")"><a href="@Href("~/")">Home</a></li>
+					<li class="@(Page.Current.ToLower() == "features" ? "active" : "")"><a href="@Href("~/features")">Features</a></li>
+					<li class="@(Page.Current.ToLower() == "plans" ? "active" : "")"><a href="@Href("~/plans")">Plans</a></li>
 					<li><a href="https://pathwayapp.com/signup">Sign Up</a></li>
 					<li><a id="btnContact" href="#">Contact</a></li>
 					<li><a href="https://pathwayapp.com/accounts/login">Login</a></li>
@@ -61,7 +74,7 @@
 			<div class="grid_8">
 				<p>
 					Pathway &copy; @DateTime.Now.Year E-vent Software, Inc. All Rights Reserved.<br />
-					<i>Helping you connect, reach &amp; grow.</i> // <a href="#">Privacy Policy</a>. <a href="#">Terms of Use</a>.
+					<i>Helping you connect, reach &amp; grow.</i> // <a href="@Href("~/legal#privacypolicy")">Privacy Policy</a>. <a href="@Href("~/legal#termsofuse")">Terms of Use</a>.
 				</p>
 			</div>
 			<div class="grid_8" style="padding-top:7px;">
@@ -129,6 +142,5 @@
 		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
 		<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
 	<![endif]-->
-
 </body>
 </html>
