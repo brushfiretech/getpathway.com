@@ -315,7 +315,7 @@ ul.deco-list {margin:5px auto;padding:0 0 0 0;list-style:none;}
 .featured h1 {color:#056a92;font-size:32px;letter-spacing:-1px;text-align:left;font-weight:700;padding:0 0 5px 0;margin:0;}
 h3 {color:#389ECB;font-size:28px;font-weight:600;padding:8px 0 9px;margin:0;}
 .section .content h3, .green {color:#8BCD28;}
-h4 {color:#389ECB;padding:10px 10px 0 0;text-align:left;font-size:20px;font-weight:600;margin:0;}
+h4 {color:#389ECB;padding:10px 10px 0 0;text-align:left;font-size:20px;font-weight:600;margin:0;letter-spacing:-1px;}
 .ad-block h4 {padding:20px 10px 5px 20px;}
 .features h4 {padding:0 10px 0 20px;}
 .dark {color:#444;}
