@@ -220,6 +220,7 @@ td { vertical-align: top; }
 .rounded {border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}
 .none {display:none;}
 .half {width:48%;margin:0 1%;}
+.relative {position:relative;}
 
 
 /* Modernized Styles */
@@ -234,14 +235,13 @@ td { vertical-align: top; }
 .no-cssgradients .ad-block.grywht-grad:hover {background:#f0f0f0;}
 
 /* Structure */
-body {background:#454545;}
-.primary {background:url("../img/bg-body-squares.png") bottom right #E5E5E5;border-bottom:1px solid #eee;}
-.main {position:relative;top:-100px;margin-bottom:-105px;background:#fff;border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;text-shadow:0 1px rgba(255, 255, 255, 0.6);border:1px solid #ccc;border-bottom:none 0;}
+body {background:url("../img/bg-body-squares.png") top left #E5E5E5;}
+.main {position:relative;margin-top:-100px;background:#fff;border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;text-shadow:0 1px rgba(255, 255, 255, 0.6);border:1px solid #ccc;border-bottom:none 0;}
 .section {border-top:3px solid rgba(0,0,0,0.2);padding:40px 0;}
-.section .sub-content {border:1px solid #ccc;background:#e5e5e5;}
+.section .sub-content {border:1px solid #ccc;}
 .section .content {border-top:1px solid #fff;background:#f0f0f0;padding:25px 0 26px;margin:-40px 0;}
 .section .content .sub-content {border:1px solid #666;background:#fff;}
-.featured {background:#f0f0f0;border:1px solid #ccc;padding:40px 0;position:relative;top:-520px;margin-bottom:-400px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;text-shadow:0 1px rgba(255, 255, 255, 0.6);}
+.featured {background:#f0f0f0;margin-top:-500px;border:1px solid #ccc;padding:40px 0;position:relative;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;text-shadow:0 1px rgba(255, 255, 255, 0.6);}
 .headline {border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;}
 
 .pricing-container {background: #E5E5E5;padding: 15px;margin: -17px auto -30px;width: 741px;border-right:1px solid #e5e5e5;}
@@ -256,7 +256,7 @@ body {background:#454545;}
 .featured-icon {background: white;width: 72px;height: 72px;border-radius: 70px;margin: 5px 15px 20px 0;}
 
 /* Header */
-.header {height:200px;border-bottom:1px solid #eee;}
+.header {height:200px;border-bottom:1px solid #fff;}
 .logo {width:155px;height:56px;margin:26px 0 0 0;background:url("../img/logo-header.png") top left no-repeat transparent;text-indent:-9999px;display:inline-block;}
 .nav.pills {margin-top:30px;}
 
@@ -393,7 +393,7 @@ a:hover .icon-arrow {background-position:-24px 0;}
 
 /* Contain floats: h5bp.com/q */ 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
+.clearfix:after, .clearboth { clear: both; }
 .clearfix { zoom: 1; }
 
 
