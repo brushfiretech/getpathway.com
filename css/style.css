@@ -244,6 +244,7 @@ body {background:url("../img/bg-body-squares.png") top left #E5E5E5;}
 .featured {background:#f0f0f0;margin-top:-460px;border:1px solid #ccc;padding:20px 0;position:relative;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;text-shadow:0 1px rgba(255, 255, 255, 0.6);}
 .featured .content {border:none 0;padding:0 20px;background:inherit;margin:0 auto;}
 .headline {border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;}
+.flow {height:580px;background:url("../img/pathway-flow.png") 60px 0 no-repeat transparent;}
 
 .pricing-container {background: #E5E5E5;padding: 15px;margin: -17px auto -30px;width: 741px;border-right:1px solid #e5e5e5;}
 .pricing-header {background:url("../img/pricing-grid-header.png") top center no-repeat transparent;width:820px;height:70px;}
