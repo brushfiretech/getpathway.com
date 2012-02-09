@@ -27,7 +27,7 @@
 						<table style="width:100%;">
 							<tr>
 								<td width="20%" style="padding:0 10px;font-weight:bold;">Starter</td>
-								<td width="25%" style="padding:0 10px;font-weight:normal;">200 minutes</td>
+								<td width="25%" style="padding:0 10px;font-weight:normal;" class="minutes">200 minutes</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$99 once</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$59/month</td>
 								<td width="5%" style="padding:0 9px;font-weight:normal;">
@@ -40,7 +40,7 @@
 						<table style="width:100%;">
 							<tr>
 								<td width="20%" style="padding:0 10px;font-weight:bold;">Basic</td>
-								<td width="25%" style="padding:0 10px;font-weight:normal;">500 minutes</td>
+								<td width="25%" style="padding:0 10px;font-weight:normal;" class="minutes">500 minutes</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$99 once</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$129/month</td>
 								<td width="5%" style="padding:0 9px;font-weight:normal;">
@@ -53,7 +53,7 @@
 						<table style="width:100%;">
 							<tr>
 								<td width="20%" style="padding:0 10px;font-weight:bold;">Premium</td>
-								<td width="25%" style="padding:0 10px;font-weight:normal;">1000 minutes</td>
+								<td width="25%" style="padding:0 10px;font-weight:normal;" class="minutes">1000 minutes</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$99 once</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$189/month</td>
 								<td width="5%" style="padding:0 9px;font-weight:normal;">
@@ -66,7 +66,7 @@
 						<table style="width:100%;">
 							<tr>
 								<td width="20%" style="padding:0 10px;font-weight:bold;">Super</td>
-								<td width="25%" style="padding:0 10px;font-weight:normal;">2000 minutes</td>
+								<td width="25%" style="padding:0 10px;font-weight:normal;" class="minutes">2000 minutes</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$99 once</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$299/month</td>
 								<td width="5%" style="padding:0 9px;font-weight:normal;">
@@ -79,7 +79,7 @@
 						<table style="width:100%;">
 							<tr>
 								<td width="20%" style="padding:0 10px;font-weight:bold;">Mega</td>
-								<td width="25%" style="padding:0 10px;font-weight:normal;">4000 minutes</td>
+								<td width="25%" style="padding:0 10px;font-weight:normal;" class="minutes">4000 minutes</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$99 once</td>
 								<td width="25%" style="padding:0 10px;font-weight:normal;">$499/month</td>
 								<td width="5%" style="padding:0 9px;font-weight:normal;">
@@ -134,9 +134,10 @@
 			<div class="grid_4 prefix_2 omega">
 				<div class="rounded grywht-grad sub-content" style="height:179px;padding:5px 0 0 5px;">
 					<p>
-						Average number of Pathway minutes per contact used: <b class="green">XX</b><br/><br/>
-						Average call time per contact (including messages): <b class="green">XX</b><br/><br/>
-						Minutes used per 20 contacts to connect: <b class="green">XX</b>					
+						<form id="frmCalc"><label># of people to connect with each week<input type="text" id="txtCalc" /></label><input type="submit" value="?" maxlength="10" size="5" /></form>
+						Minutes: <b class="green" id="uxMinCalc">0</b><br/><br/>
+						Plan: <b class="green" id="uxPlanCalc">Any</b><br/><br/>
+						fine print: based upon current historical data of 1.9 calls	per contact with each call taking an average of 2.26 minutes.	
 					</p>
 				</div>
 			</div>
@@ -146,7 +147,7 @@
 		<div class="content clearfix">
 		<div class="grid_14 prefix_1">
 			<div class="grid_11 alpha">
-				<h3>That's all there is to it, Sign Up today!</h3>
+				<h3>That's all there is to it, Sign up today!</h3>
 			</div>
 			<div class="grid_3 omega rgt-align">
 				<a href="https://pathwayapp.com/signup" class="btn grn large">Sign Up</a>
@@ -161,7 +162,41 @@
 	<script type="text/javascript">
 		$(function ()
 		{
-			$("a[rel=popover]").popover({offset: 5});
+			$("a[rel=popover]").popover({ offset: 5 });
+
+			$("#frmCalc").submit(function ()
+			{
+				var peeps = $("#txtCalc").val();
+
+				if (!($.trim(peeps).match(/\d{1,10}/)))
+				{
+					$("#uxMinCalc").text("0");
+					$("#uxPlanCalc").text("Any");
+					$("#txtCalc").val("");
+					return false;
+				}
+
+				var callsPerContact = 1.9;
+				var minsPerCall = 2.26;
+				var calc = peeps * callsPerContact * minsPerCall * 52 / 12;
+				var plan = "Unlimited";
+
+				$("#uxMinCalc").text(parseInt(calc));
+
+				$(".pricing-container").find(".minutes").each(function (i, n)
+				{
+					var minutes = parseInt($(n).text());
+					if (calc < minutes)
+					{
+						plan = $(n).prev("td").text();
+						$("#uxPlanCalc").text(plan);
+						return false;
+					}
+				});
+				
+				$("#uxPlanCalc").text(plan);
+				return false;
+			});
 		});
 	</script>
 }

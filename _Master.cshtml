@@ -18,14 +18,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="shortcut icon" href="@Href("~/img/favicon.ico")">
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/formalize/formalize.css")" />
-	<script type="text/javascript" src="@Href("~/scripts/modernizr-2.0.6.min.js")"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="@Href("~/scripts/jquery-ui-1.8.16.custom.min.js")"></script>
-	<script type="text/javascript" src="@Href("~/scripts/jquery.formalize.min.js")"></script>
 	<script type="text/javascript" src="http://use.typekit.com/llm7jrh.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<script type="text/javascript" src="@Href("~/scripts/bootstrap-twipsy.js")"></script>
-	<script type="text/javascript" src="@Href("~/scripts/bootstrap-popover.js")"></script>	
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/jquery-ui/jquery-ui-1.8.16.custom.css")" />
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/style.css")" />
 	<link rel="stylesheet" type="text/css" href="@Href("~/css/960_16_col.css")" />
@@ -121,6 +115,12 @@
 	{
 		@RenderSection("templates")
 	}
+	<script type="text/javascript" src="@Href("~/scripts/modernizr-2.0.6.min.js")"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="@Href("~/scripts/jquery-ui-1.8.16.custom.min.js")"></script>
+	<script type="text/javascript" src="@Href("~/scripts/jquery.formalize.min.js")"></script>
+	<script type="text/javascript" src="@Href("~/scripts/bootstrap-twipsy.js")"></script>
+	<script type="text/javascript" src="@Href("~/scripts/bootstrap-popover.js")"></script>	
 	<script type="text/javascript">
 		$(function()
 		{
@@ -131,7 +131,6 @@
 		
 			$("#btnContact").click(function()
 			{
-				console.log(1);
 				$("#frmContact").dialog(
 				{
 					width: 450,
