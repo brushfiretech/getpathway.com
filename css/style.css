@@ -343,9 +343,11 @@ a.top:hover {opacity:1;}
 
 a.nodeco, a.nodeco:active, a.nodeco:visited, a.nodeco:hover, a.nodeco:focus {color:inherit;text-decoration:none;outline:none;cursor:pointer;}
 
-.flow-link {position:absolute;width:24px;height:24px;border-radius:24px;-webkit-border-radius:24px;-moz-border-radius:24px;}
+.flow-link {position:absolute;width:54px;height:12px;padding-top:24px;font-size:12px;font-weight:700;text-align:center;}
 
 /* Icons */
+.twitter {width:24px;height:24px;display:inline-block;background:url("../img/twitter.png") top center no-repeat transparent;}
+.facebook {width:24px;height:24px;display:inline-block;background:url("../img/facebook.png") top center no-repeat transparent;}
 .icon-clock {background:url("../img/icon-clock.png") top left no-repeat transparent;width:48px;height:48px;display:inline-block;text-indent:-9999px;top: -20px;position: relative;margin: 0 5px -20px 0;}
 .icon-question {width:24px;height:23px;display:block;margin-top:1px;background:url("../img/icon-question.png") center center no-repeat;}
 .icon-arrow {width:24px;height:23px;display:inline-block;margin:-5px 0 -7px 0;background:url("../img/icon-arrow-sprite.png") 0 0 no-repeat;}
@@ -372,7 +374,8 @@ a:hover .icon-arrow {background-position:-24px 0;}
 .ui-dialog .ui-dialog-titlebar-close:hover .ui-icon-closethick, .ui-dialog .ui-dialog-titlebar-close:focus .ui-icon-closethick {opacity:1.0;}
 .ui-dialog .ui-dialog-titlebar {margin:-.2em -.2em 0 -.2em;background:#fff;border:none 0;border-bottom:3px solid rgba(0, 0, 0, 0.2);text-align:center;border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;}
 .ui-dialog .ui-dialog-title {float:none;margin:0;font-size:24px;font-weight:300;color:#389ECB;}
-
+.ui-dialog .ui-widget-content a, .ui-dialog .ui-widget-content a:active, .ui-dialog .ui-widget-content a:visited, .ui-dialog .ui-widget-content a:focus {color:#056A96;outline:none;}
+.ui-dialog .ui-widget-content a:hover {color:#389ECB;}
 
 
 

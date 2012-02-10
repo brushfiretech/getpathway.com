@@ -131,13 +131,13 @@
 				<h3 class="inline-block">How many minutes do I need?</h3>
 				<p>We know that picking the right plan includes a little guesswork.  You may know how many contacts (first time guests, new believers, etc) but you aren’t quite sure how long the calls typically last, and how many times you attempt to make contact on average.  While results vary depending on the campaign itself, here are some <i>real</i> statistics for you to use as you make your decision. </p>
 			</div>
-			<div class="grid_4 prefix_2 omega">
-				<div class="rounded grywht-grad sub-content" style="height:179px;padding:5px 0 0 5px;">
+			<div class="grid_5 prefix_1 omega">
+				<div class="rounded grywht-grad sub-content" style="padding:6px 0 5px 4px;">
 					<p>
-						<form id="frmCalc"><label># of people to connect with each week<input type="text" id="txtCalc" /></label><input type="submit" value="?" maxlength="10" size="5" /></form>
-						Minutes: <b class="green" id="uxMinCalc">0</b><br/><br/>
-						Plan: <b class="green" id="uxPlanCalc">Any</b><br/><br/>
-						fine print: based upon current historical data of 1.9 calls	per contact with each call taking an average of 2.26 minutes.	
+						<form id="frmCalc"><label class="inline-block">Number of weekly connections: <input type="text" id="txtCalc" style="width:38px;" maxlength="4" /></label></form><br/>
+						<h4 class="dark">Estimated Minutes: <b class="green" id="uxMinCalc">0</b></h4><br />
+						<h4 class="dark">Suggested Plan: <b class="green" id="uxPlanCalc">Any</b></h4><br />
+						<i><span class="inline-block" style="font-size:10px;line-height:12px;">Based upon current historical data of 1.9 calls per contact with each call taking an average of 2.26 minutes.</span></i>
 					</p>
 				</div>
 			</div>
@@ -163,6 +163,8 @@
 		$(function ()
 		{
 			$("a[rel=popover]").popover({ offset: 5 });
+			
+			$("#txtCalc").keyup(function() { $("#frmCalc").submit(); });
 
 			$("#frmCalc").submit(function ()
 			{
